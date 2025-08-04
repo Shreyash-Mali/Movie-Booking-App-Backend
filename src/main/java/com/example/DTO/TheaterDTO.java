@@ -1,25 +1,17 @@
-package com.example.Entity;
+package com.example.DTO;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
 
-@Entity
-public class Theater {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TheaterDTO {
     private Long id;
     private String name;
     private String location;
     private Integer theaterCapacity;
     private String theaterScreenType;
-    //one theater can have many shows
-   // @OneToMany(mappedBy = "theater", fetch = FetchType.LAZY)
-   // private List<Show> shows;
     public Long getId() {
         return id;
     }
@@ -59,13 +51,13 @@ public class Theater {
     public void setTheaterScreenType(String theaterScreenType) {
         this.theaterScreenType = theaterScreenType;
     }
-    public Theater(Long id, String name, String location, Integer theaterCapacity, String theaterScreenType) {
+    public TheaterDTO(Long id, String name, String location, Integer theaterCapacity, String theaterScreenType) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.theaterCapacity = theaterCapacity;
         this.theaterScreenType = theaterScreenType;
     }
-    public Theater() {
+    public TheaterDTO() {
     }
 }
