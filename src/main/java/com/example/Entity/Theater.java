@@ -18,8 +18,9 @@ public class Theater {
     private Integer theaterCapacity;
     private String theaterScreenType;
     //one theater can have many shows
-   // @OneToMany(mappedBy = "theater", fetch = FetchType.LAZY)
-   // private List<Show> shows;
+    @OneToMany(mappedBy = "theater", fetch = FetchType.LAZY)
+    private List<Show> shows;
+
     public Long getId() {
         return id;
     }
@@ -59,13 +60,24 @@ public class Theater {
     public void setTheaterScreenType(String theaterScreenType) {
         this.theaterScreenType = theaterScreenType;
     }
-    public Theater(Long id, String name, String location, Integer theaterCapacity, String theaterScreenType) {
+
+    public List<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(List<Show> shows) {
+        this.shows = shows;
+    }
+
+    public Theater(Long id, String name, String location, Integer theaterCapacity, String theaterScreenType, List<Show> shows) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.theaterCapacity = theaterCapacity;
         this.theaterScreenType = theaterScreenType;
+        this.shows = shows;
     }
+
     public Theater() {
     }
 }
