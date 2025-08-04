@@ -10,6 +10,7 @@ import java.awt.print.Book;
 import java.util.List;
 
 @Entity
+@Table(name = "shows")
 public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
