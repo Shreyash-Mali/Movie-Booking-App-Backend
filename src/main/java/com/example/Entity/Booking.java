@@ -11,6 +11,10 @@ import java.util.List;
 
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "booking")
 public class Booking {
     @Id
@@ -30,80 +34,5 @@ public class Booking {
     @JoinColumn(name = "show_id", nullable = false)
     private Show show;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getNumberOfSeats() {
-        return numberOfSeats;
-    }
-
-    public void setNumberOfSeats(Integer numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
-    }
-
-    public LocalDateTime getBookingTime() {
-        return bookingTime;
-    }
-
-    public void setBookingTime(LocalDateTime bookingTime) {
-        this.bookingTime = bookingTime;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public BookingStatus getBookingStatus() {
-        return bookingStatus;
-    }
-
-    public void setBookingStatus(BookingStatus bookingStatus) {
-        this.bookingStatus = bookingStatus;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<String> getSeatNumbers() {
-        return seatNumbers;
-    }
-
-    public void setSeatNumbers(List<String> seatNumbers) {
-        this.seatNumbers = seatNumbers;
-    }
-
-    public Show getShow() {
-        return show;
-    }
-
-    public void setShow(Show show) {
-        this.show = show;
-    }
-
-    public Booking(Long id, Integer numberOfSeats, LocalDateTime bookingTime, Double price, BookingStatus bookingStatus, User user, List<String> seatNumbers, Show show) {
-        this.id = id;
-        this.numberOfSeats = numberOfSeats;
-        this.bookingTime = bookingTime;
-        this.price = price;
-        this.bookingStatus = bookingStatus;
-        this.user = user;
-        this.seatNumbers = seatNumbers;
-        this.show = show;
-    }
-    public Booking() {
-    }
 }
