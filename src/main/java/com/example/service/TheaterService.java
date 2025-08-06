@@ -24,7 +24,7 @@ public class TheaterService {
     }
 
     public List<Theater> getTheaterByLocation(String location) {
-        Optional<List<Theater>> listOfTheaters = theaterRepository.finByLocation(location);
+        Optional<List<Theater>> listOfTheaters = theaterRepository.findByLocation(location);
         if (listOfTheaters.isPresent()) {
             return listOfTheaters.get();
         } else {

@@ -83,11 +83,6 @@ public class BookingService {
         }
     }
 
-
-    private boolean isSeatsAvailable(Long showid, int numberOfSeats) {
-       
-    }
-
     public List<Booking> getUserBookings(Long userId) {
         return bookingRepository.findByShowId(userId);
 
@@ -128,6 +123,6 @@ public class BookingService {
 
     }
 
-    public List<Booking> getBookingByStatus() {
-    }
+//    public List<Booking> getBookingByStatus() {
+//    }
 }
